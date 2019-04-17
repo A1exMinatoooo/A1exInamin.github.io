@@ -79,20 +79,20 @@
 
 
 
-<meta name="description" content="越来越多的人（包括我自己）都在使用 GitHub Pages 来托管自己的博客。相比传统的自行在服务器上搭建博客，GitHub Pages 具有免费、自带版本控制等许多优点。但是 GitHub Pages 只为默认的 *.github.io 域名提供强制 HTTPS 支持，本篇文章提供了通过 CloudFlare 的免费 CDN 服务为 GitHub Pages 博客开启 HTTPS 支持的方法">
+<meta name="description" content="越来越多的人（包括我自己）都在使用 GitHub Pages 来托管自己的博客。相比传统的自行在服务器上搭建博客，GitHub Pages 具有免费、自带版本控制等许多优点。但是 GitHub Pages 只为默认的 *.github.io 域名提供强制 HTTPS 支持，本篇文章提供了通过 CloudFlare 的免费 CDN 服务为 GitHub Pages 博客开启 HTTPS 支持的方法。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="为 GitHub Pages 启用自定义域名并开启 HTTPS">
 <meta property="og:url" content="https://a1ex.pw/2019/04/16/use-custom-domain-for-github-pages/index.html">
 <meta property="og:site_name" content="Sailing to the Rainbow">
-<meta property="og:description" content="越来越多的人（包括我自己）都在使用 GitHub Pages 来托管自己的博客。相比传统的自行在服务器上搭建博客，GitHub Pages 具有免费、自带版本控制等许多优点。但是 GitHub Pages 只为默认的 *.github.io 域名提供强制 HTTPS 支持，本篇文章提供了通过 CloudFlare 的免费 CDN 服务为 GitHub Pages 博客开启 HTTPS 支持的方法">
+<meta property="og:description" content="越来越多的人（包括我自己）都在使用 GitHub Pages 来托管自己的博客。相比传统的自行在服务器上搭建博客，GitHub Pages 具有免费、自带版本控制等许多优点。但是 GitHub Pages 只为默认的 *.github.io 域名提供强制 HTTPS 支持，本篇文章提供了通过 CloudFlare 的免费 CDN 服务为 GitHub Pages 博客开启 HTTPS 支持的方法。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://a1ex.pw/2019/04/16/use-custom-domain-for-github-pages/img/190417_enable_ssl.png">
 <meta property="og:image" content="https://a1ex.pw/2019/04/16/use-custom-domain-for-github-pages/img/190417_always_use_https.png">
 <meta property="og:image" content="https://a1ex.pw/2019/04/16/use-custom-domain-for-github-pages/img/190417_automatic_http_rewrites.png">
-<meta property="og:updated_time" content="2019-04-17T08:54:10.030Z">
+<meta property="og:updated_time" content="2019-04-17T08:55:23.734Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="为 GitHub Pages 启用自定义域名并开启 HTTPS">
-<meta name="twitter:description" content="越来越多的人（包括我自己）都在使用 GitHub Pages 来托管自己的博客。相比传统的自行在服务器上搭建博客，GitHub Pages 具有免费、自带版本控制等许多优点。但是 GitHub Pages 只为默认的 *.github.io 域名提供强制 HTTPS 支持，本篇文章提供了通过 CloudFlare 的免费 CDN 服务为 GitHub Pages 博客开启 HTTPS 支持的方法">
+<meta name="twitter:description" content="越来越多的人（包括我自己）都在使用 GitHub Pages 来托管自己的博客。相比传统的自行在服务器上搭建博客，GitHub Pages 具有免费、自带版本控制等许多优点。但是 GitHub Pages 只为默认的 *.github.io 域名提供强制 HTTPS 支持，本篇文章提供了通过 CloudFlare 的免费 CDN 服务为 GitHub Pages 博客开启 HTTPS 支持的方法。">
 <meta name="twitter:image" content="https://a1ex.pw/2019/04/16/use-custom-domain-for-github-pages/img/190417_enable_ssl.png">
 
 
@@ -303,8 +303,8 @@
       
 
       
-        <a id="more"></a>
-<p>越来越多的人（包括我自己）都在使用 <a href="https://pages.github.com" target="_blank" rel="noopener">GitHub Pages</a> 来托管自己的博客。相比传统的自行在服务器上搭建博客，GitHub Pages 具有免费、自带版本控制等许多优点。但是 GitHub Pages 只为默认的 <code>*.github.io</code> 域名提供强制 HTTPS 支持，本篇文章提供了通过 CloudFlare 的免费 CDN 服务为 GitHub Pages 博客开启 HTTPS 支持的方法。</p>
+        <p>越来越多的人（包括我自己）都在使用 <a href="https://pages.github.com" target="_blank" rel="noopener">GitHub Pages</a> 来托管自己的博客。相比传统的自行在服务器上搭建博客，GitHub Pages 具有免费、自带版本控制等许多优点。但是 GitHub Pages 只为默认的 <code>*.github.io</code> 域名提供强制 HTTPS 支持，本篇文章提供了通过 CloudFlare 的免费 CDN 服务为 GitHub Pages 博客开启 HTTPS 支持的方法。</p>
+<a id="more"></a>
 <h2 id="0x01-自定义域名配置"><a href="#0x01-自定义域名配置" class="headerlink" title="0x01 自定义域名配置"></a>0x01 自定义域名配置</h2><p>注：进行之前需要将您的域名解析服务提供商（Nameserver）设置为 CloudFlare，设置的方法不在此文讨论范围，还请自行查找</p>
 <p>首先在 <code>博客目录/source</code> 目录下新建文件 <code>CNAME</code>，并将域名写入。此处注意，如果想同时使用 <code>www</code> 访问博客的话不需要将 <code>www</code> 写入，下为示例：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">'a1ex.pw'</span> &gt; CNAME</span><br></pre></td></tr></table></figure>
