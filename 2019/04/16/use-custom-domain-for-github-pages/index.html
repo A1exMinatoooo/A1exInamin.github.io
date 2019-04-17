@@ -86,14 +86,14 @@
 <meta property="og:site_name" content="Sailing to the Rainbow">
 <meta property="og:description" content="越来越多的人（包括我自己）都在使用 GitHub Pages 来托管自己的博客。相比传统的自行在服务器上搭建博客，GitHub Pages 具有免费、自带版本控制等许多优点。但是 GitHub Pages 只为默认的 *.github.io 域名提供强制 HTTPS 支持，本篇文章提供了通过 CloudFlare 的免费 CDN 服务为 GitHub Pages 博客开启 HTTPS 支持的方法。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://a1ex.pw/2019/04/16/use-custom-domain-for-github-pages/img/190417_enable_ssl.png">
-<meta property="og:image" content="https://a1ex.pw/2019/04/16/use-custom-domain-for-github-pages/img/190417_always_use_https.png">
-<meta property="og:image" content="https://a1ex.pw/2019/04/16/use-custom-domain-for-github-pages/img/190417_automatic_http_rewrites.png">
-<meta property="og:updated_time" content="2019-04-17T08:58:22.621Z">
+<meta property="og:image" content="https://a1ex.pw/img/190417_enable_ssl.png">
+<meta property="og:image" content="https://a1ex.pw/img/190417_always_use_https.png">
+<meta property="og:image" content="https://a1ex.pw/img/190417_automatic_http_rewrites.png">
+<meta property="og:updated_time" content="2019-04-17T09:00:27.750Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="为 GitHub Pages 启用自定义域名并开启 HTTPS">
 <meta name="twitter:description" content="越来越多的人（包括我自己）都在使用 GitHub Pages 来托管自己的博客。相比传统的自行在服务器上搭建博客，GitHub Pages 具有免费、自带版本控制等许多优点。但是 GitHub Pages 只为默认的 *.github.io 域名提供强制 HTTPS 支持，本篇文章提供了通过 CloudFlare 的免费 CDN 服务为 GitHub Pages 博客开启 HTTPS 支持的方法。">
-<meta name="twitter:image" content="https://a1ex.pw/2019/04/16/use-custom-domain-for-github-pages/img/190417_enable_ssl.png">
+<meta name="twitter:image" content="https://a1ex.pw/img/190417_enable_ssl.png">
 
 
 
@@ -310,9 +310,9 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">'a1ex.pw'</span> &gt; CNAME</span><br></pre></td></tr></table></figure>
 <p>然后在 CloudFlare 的控制面板中添加 CNAME 记录，并开启右侧的 CDN 服务。</p>
 <h2 id="0x02-SSL-设置"><a href="#0x02-SSL-设置" class="headerlink" title="0x02 SSL 设置"></a>0x02 SSL 设置</h2><p>在 CloudFlare 控制面板中，点击上面的 <strong>Crypto</strong> 标签，将 SSL 一项设置为 Full，将 Always Use HTTPS、Automatic HTTPS Rewrites 开启，就 OK 了</p>
-<p><img src="img/190417_enable_ssl.png" alt="Pic 01 开启 SSL"></p>
-<p><img src="img/190417_always_use_https.png" alt="Pic 02 Always Use HTTPS"></p>
-<p><img src="img/190417_automatic_http_rewrites.png" alt="Pic 03 Automatic HTTP Rewrites"></p>
+<p><img src="/img/190417_enable_ssl.png" alt="Pic 01 开启 SSL"></p>
+<p><img src="/img/190417_always_use_https.png" alt="Pic 02 Always Use HTTPS"></p>
+<p><img src="/img/190417_automatic_http_rewrites.png" alt="Pic 03 Automatic HTTP Rewrites"></p>
 <p>另外可以根据实际需求选择是否开启 HSTS Preload 和 TLS v1.3。</p>
 <h2 id="0xFF-结语"><a href="#0xFF-结语" class="headerlink" title="0xFF 结语"></a>0xFF 结语</h2><p>在之前查找资料的时候发现了一些使用 Page Rules 来实现强制 HTTPS 的文章，不知道是不是因为写文时还没有上述的 Always Use HTTPS 和 Automatic HTTP Rewrites 功能，希望有了解的人能解答一下。</p>
 <p>本站评论系统暂时还未上线，我谢罪</p>
