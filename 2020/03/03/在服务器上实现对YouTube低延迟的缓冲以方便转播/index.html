@@ -105,7 +105,7 @@
 <meta property="og:description" content="前言昨天做管人转播的时候又开始疯狂转圈，然后打开统计信息发现管人果然用的还是 Ultra Low Latency （超低延迟直播）。这种缓冲区只留 2-3 秒而且还动不动归零的直播对于我这个烂网来说是真的遭不住，于是在群里吐槽之后另一位转圈 man 说他是自己建了一个缓冲区然后再进行推流的，得知这个思路之后决定开始自己折腾一波。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://i.postimg.cc/KY0867gd/live-test.png">
-<meta property="og:updated_time" content="2020-03-03T08:35:29.424Z">
+<meta property="og:updated_time" content="2020-03-03T08:40:05.892Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在服务器上实现对YouTube低延迟的缓冲以方便转播">
 <meta name="twitter:description" content="前言昨天做管人转播的时候又开始疯狂转圈，然后打开统计信息发现管人果然用的还是 Ultra Low Latency （超低延迟直播）。这种缓冲区只留 2-3 秒而且还动不动归零的直播对于我这个烂网来说是真的遭不住，于是在群里吐槽之后另一位转圈 man 说他是自己建了一个缓冲区然后再进行推流的，得知这个思路之后决定开始自己折腾一波。">
@@ -353,7 +353,7 @@
                 
               
 
-              <time title="创建时间：2020-03-03 08:53:00 / 修改时间：16:35:29" itemprop="dateCreated datePublished" datetime="2020-03-03T08:53:00+08:00">2020-03-03</time>
+              <time title="创建时间：2020-03-03 08:53:00 / 修改时间：16:40:05" itemprop="dateCreated datePublished" datetime="2020-03-03T08:53:00+08:00">2020-03-03</time>
             
 
             
@@ -413,26 +413,26 @@
 <ol>
 <li>首先下载 <code>nginx-http-flv-module</code> 扩展模块</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/winshining/nginx-http-flv-module/archive/v1.2.7.tar.gz</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/winshining/nginx-http-flv-module/archive/v1.2.7.tar.gz</span><br></pre></td></tr></table></figure>
 <ol start="2">
 <li>解压</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -xzvf v1.2.7.tar.gz</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -xzvf v1.2.7.tar.gz</span><br></pre></td></tr></table></figure>
 <ol start="3">
 <li>下载最新的 lnmp 安装包并解压</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http://soft.vpser.net/lnmp/lnmp1.7beta.tar.gz -cO lnmp1.7beta.tar.gz &amp;&amp; tar zxf lnmp1.7beta.tar.gz &amp;&amp; cd lnmp1.7</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http://soft.vpser.net/lnmp/lnmp1.7beta.tar.gz -cO lnmp1.7beta.tar.gz &amp;&amp; tar zxf lnmp1.7beta.tar.gz &amp;&amp; <span class="built_in">cd</span> lnmp1.7</span><br></pre></td></tr></table></figure>
 <ol start="4">
 <li>修改 lnmp.conf</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nano lnmp.conf</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nano lnmp.conf</span><br></pre></td></tr></table></figure>
 <p>在 <code>Nginx_Modules_Options</code> 中添加 rtmp 扩展</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Nginx_Modules_Options=&apos;--add-module=/path/to/nginx-rtmp-module&apos;</span><br></pre></td></tr></table></figure>
 <ol start="5">
 <li>升级 Nginx</li>
 </ol>
 <p>在 lnmp 目录下</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./upgrade.sh nginx</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./upgrade.sh nginx</span><br></pre></td></tr></table></figure>
 <p>安装完成之后输入 <code>/usr/local/nginx/sbin/nginx -V</code> 如果结尾出现 <code>--add-module=/usr/local/nginx/extend_module/nginx-rtmp-module</code> 则代表安装成功</p>
 <h2 id="添加-Vhost"><a href="#添加-Vhost" class="headerlink" title="添加 Vhost"></a>添加 Vhost</h2><p>使用如下命令新建一个 vhost：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lnmp vhost add</span><br></pre></td></tr></table></figure>
@@ -445,20 +445,20 @@
 <li>修改 vhost 文件</li>
 </ol>
 <p>首先修改网站的 vhost 文件，添加状态监控页面的配置</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nano /usr/local/nginx/conf/vhost/yourdomain.com.conf</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nano /usr/<span class="built_in">local</span>/nginx/conf/vhost/yourdomain.com.conf</span><br></pre></td></tr></table></figure>
 <p>在下半段的 443 端口中添加如下内容</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">location /stat &#123;</span><br><span class="line">    rtmp_stat all;</span><br><span class="line">    rtmp_stat_stylesheet stat.xsl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">location /stat.xsl &#123;</span><br><span class="line">    root /usr/local/nginx/extend_module/nginx-rtmp-module/;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight nginxconf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">location</span> /stat &#123;</span><br><span class="line">    <span class="attribute">rtmp_stat</span> all;</span><br><span class="line">    <span class="attribute">rtmp_stat_stylesheet</span> stat.xsl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="attribute">location</span> /stat.xsl &#123;</span><br><span class="line">    <span class="attribute">root</span> /usr/local/nginx/extend_module/nginx-rtmp-module/;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ol start="2">
 <li>修改 Nginx 配置文件</li>
 </ol>
 <p>由于 rtmp 内容不能直接添加至 vhost 配置中，因此需要单独修改 Nginx 的配置文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nano /usr/local/nginx/conf/nginx.conf</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nano /usr/<span class="built_in">local</span>/nginx/conf/nginx.conf</span><br></pre></td></tr></table></figure>
 <p>添加如下内容</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">rtmp &#123;</span><br><span class="line">    server &#123;</span><br><span class="line">        listen 1935;              # 监听的端口</span><br><span class="line">        server_name yourdomain.com;</span><br><span class="line">        chunk_size 4000;</span><br><span class="line">        application live &#123;        # rtmp推流请求路径</span><br><span class="line">            live on;</span><br><span class="line">            record off;</span><br><span class="line">            #publish_notify on;   # 推流验证，和下一行需一起使用</span><br><span class="line">            #on_publish http://localhost/auth.php;    # 推流验证，具体可参照后文</span><br><span class="line"></span><br><span class="line">            hls on;</span><br><span class="line">            hls_path /home/hls/;  # 视频流hls切片文件目录(自己创建)</span><br><span class="line">            hls_fragment 3s;      # hls单个切片时长，会影响延迟</span><br><span class="line">            hls_playlist_length 32s;  # hls总缓存时间，会影响延迟</span><br><span class="line"></span><br><span class="line">            meta on;              # 如果http-flv播放时首帧出现问题，可改为off</span><br><span class="line">            gop_cache on;         # 可以减少首帧延迟</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight nginxconf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">rtmp</span> &#123;</span><br><span class="line">    <span class="section">server</span> &#123;</span><br><span class="line">        <span class="attribute">listen</span> <span class="number">1935</span>;              <span class="comment"># 监听的端口</span></span><br><span class="line">        <span class="attribute">server_name</span> yourdomain.com;</span><br><span class="line">        <span class="attribute">chunk_size</span> <span class="number">4000</span>;</span><br><span class="line">        <span class="attribute">application</span> live &#123;        <span class="comment"># rtmp推流请求路径</span></span><br><span class="line">            <span class="attribute">live</span> <span class="literal">on</span>;</span><br><span class="line">            <span class="attribute">record</span> <span class="literal">off</span>;</span><br><span class="line">            <span class="comment">#publish_notify on;   # 推流验证，和下一行需一起使用</span></span><br><span class="line">            <span class="comment">#on_publish http://localhost/auth.php;    # 推流验证，具体可参照后文</span></span><br><span class="line"></span><br><span class="line">            <span class="attribute">hls</span> <span class="literal">on</span>;</span><br><span class="line">            <span class="attribute">hls_path</span> /home/hls/;  <span class="comment"># 视频流hls切片文件目录(自己创建)</span></span><br><span class="line">            <span class="attribute">hls_fragment</span> <span class="number">3s</span>;      <span class="comment"># hls单个切片时长，会影响延迟</span></span><br><span class="line">            <span class="attribute">hls_playlist_length</span> <span class="number">32s</span>;  <span class="comment"># hls总缓存时间，会影响延迟</span></span><br><span class="line"></span><br><span class="line">            <span class="attribute">meta</span> <span class="literal">on</span>;              <span class="comment"># 如果http-flv播放时首帧出现问题，可改为off</span></span><br><span class="line">            <span class="attribute">gop_cache</span> <span class="literal">on</span>;         <span class="comment"># 可以减少首帧延迟</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>两个配置修改完之后重启 Nginx 以使配置生效</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lnmp nginx restart</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lnmp nginx restart</span><br></pre></td></tr></table></figure>
 <h1 id="测试直播"><a href="#测试直播" class="headerlink" title="测试直播"></a>测试直播</h1><p>在 VPS 内推流可使用如下命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">streamlink YOUTUBE_LINK best -O | ffmpeg -i pipe:0 -vcodec copy -acodec copy -f flv rtmp://localhost/live/LIVE_NAME</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">streamlink YOUTUBE_LINK best -O | ffmpeg -i pipe:0 -vcodec copy -acodec copy -f flv rtmp://localhost/live/LIVE_NAME</span><br></pre></td></tr></table></figure>
 <p>注1：<code>YOUTUBE_LINK</code> 以及 <code>LIVE_NAME</code> 请根据实际情况替换。</p>
 <p>注2：<code>streamlink</code> 及其依赖安装方法不在本文讨论范围内。</p>
 <p>外部推流将 <code>localhost</code> 替换为前文配置的域名即可</p>
