@@ -96,19 +96,19 @@
 
 
 
-  <meta name="description" content="一、前言昨天做管人转播的时候又开始疯狂转圈，然后打开统计信息发现管人果然用的还是 Ultra Low Latency （超低延迟直播）。这种缓冲区只留 2-3 秒而且还动不动归零的直播对于我这个烂网来说是真的遭不住，于是在群里吐槽之后另一位转圈 man 说他是自己建了一个缓冲区然后再进行推流的，得知这个思路之后决定开始自己折腾一波。">
+  <meta name="description" content="前言昨天做管人转播的时候又开始疯狂转圈，然后打开统计信息发现管人果然用的还是 Ultra Low Latency （超低延迟直播）。这种缓冲区只留 2-3 秒而且还动不动归零的直播对于我这个烂网来说是真的遭不住，于是在群里吐槽之后另一位转圈 man 说他是自己建了一个缓冲区然后再进行推流的，得知这个思路之后决定开始自己折腾一波。">
 <meta name="keywords" content="YouTube,Bilibili,转播man,转圈man">
 <meta property="og:type" content="article">
 <meta property="og:title" content="在服务器上实现对YouTube低延迟的缓冲以方便转播">
 <meta property="og:url" content="https://a1ex.pw/2020/03/03/在服务器上实现对YouTube低延迟的缓冲以方便转播/index.html">
 <meta property="og:site_name" content="Sailing to the Rainbow">
-<meta property="og:description" content="一、前言昨天做管人转播的时候又开始疯狂转圈，然后打开统计信息发现管人果然用的还是 Ultra Low Latency （超低延迟直播）。这种缓冲区只留 2-3 秒而且还动不动归零的直播对于我这个烂网来说是真的遭不住，于是在群里吐槽之后另一位转圈 man 说他是自己建了一个缓冲区然后再进行推流的，得知这个思路之后决定开始自己折腾一波。">
+<meta property="og:description" content="前言昨天做管人转播的时候又开始疯狂转圈，然后打开统计信息发现管人果然用的还是 Ultra Low Latency （超低延迟直播）。这种缓冲区只留 2-3 秒而且还动不动归零的直播对于我这个烂网来说是真的遭不住，于是在群里吐槽之后另一位转圈 man 说他是自己建了一个缓冲区然后再进行推流的，得知这个思路之后决定开始自己折腾一波。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://i.postimg.cc/KY0867gd/live-test.png">
-<meta property="og:updated_time" content="2020-03-03T08:32:14.433Z">
+<meta property="og:updated_time" content="2020-03-03T08:35:29.424Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在服务器上实现对YouTube低延迟的缓冲以方便转播">
-<meta name="twitter:description" content="一、前言昨天做管人转播的时候又开始疯狂转圈，然后打开统计信息发现管人果然用的还是 Ultra Low Latency （超低延迟直播）。这种缓冲区只留 2-3 秒而且还动不动归零的直播对于我这个烂网来说是真的遭不住，于是在群里吐槽之后另一位转圈 man 说他是自己建了一个缓冲区然后再进行推流的，得知这个思路之后决定开始自己折腾一波。">
+<meta name="twitter:description" content="前言昨天做管人转播的时候又开始疯狂转圈，然后打开统计信息发现管人果然用的还是 Ultra Low Latency （超低延迟直播）。这种缓冲区只留 2-3 秒而且还动不动归零的直播对于我这个烂网来说是真的遭不住，于是在群里吐槽之后另一位转圈 man 说他是自己建了一个缓冲区然后再进行推流的，得知这个思路之后决定开始自己折腾一波。">
 <meta name="twitter:image" content="https://i.postimg.cc/KY0867gd/live-test.png">
 
 
@@ -353,7 +353,7 @@
                 
               
 
-              <time title="创建时间：2020-03-03 08:53:00 / 修改时间：16:32:14" itemprop="dateCreated datePublished" datetime="2020-03-03T08:53:00+08:00">2020-03-03</time>
+              <time title="创建时间：2020-03-03 08:53:00 / 修改时间：16:35:29" itemprop="dateCreated datePublished" datetime="2020-03-03T08:53:00+08:00">2020-03-03</time>
             
 
             
@@ -405,10 +405,10 @@
       
 
       
-        <h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>昨天做管人转播的时候又开始疯狂转圈，然后打开统计信息发现管人果然用的还是 Ultra Low Latency （超低延迟直播）。这种缓冲区只留 2-3 秒而且还动不动归零的直播对于我这个烂网来说是真的遭不住，于是在群里吐槽之后另一位转圈 man 说他是自己建了一个缓冲区然后再进行推流的，得知这个思路之后决定开始自己折腾一波。</p>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>昨天做管人转播的时候又开始疯狂转圈，然后打开统计信息发现管人果然用的还是 Ultra Low Latency （超低延迟直播）。这种缓冲区只留 2-3 秒而且还动不动归零的直播对于我这个烂网来说是真的遭不住，于是在群里吐槽之后另一位转圈 man 说他是自己建了一个缓冲区然后再进行推流的，得知这个思路之后决定开始自己折腾一波。</p>
 <a id="more"></a>
 <p>最开始是尝试先在本地使用 <code>streamlink</code> 进行缓存，然后使用 PotPlayer 进行播放，OBS 使用 PotPlayer 画面进行转播。但是发现可能是因为本地的网络状况不佳，录制下来的文件经常出现跳帧的情况，于是决定将缓存这一环节放在服务器上进行，然后本地串流服务器保存的内容。</p>
-<h1 id="二、开始配置"><a href="#二、开始配置" class="headerlink" title="二、开始配置"></a>二、开始配置</h1><h2 id="1-配置环境"><a href="#1-配置环境" class="headerlink" title="1. 配置环境"></a>1. 配置环境</h2><p>VPS 需要先配置 nginx 环境，如果使用的机器是新机器的话，建议手动配置，参照<a href="https://github.com/winshining/nginx-http-flv-module/blob/master/README.CN.md" target="_blank" rel="noopener">这篇文章</a>手动编译所需要的 nginx 环境</p>
+<h1 id="开始配置"><a href="#开始配置" class="headerlink" title="开始配置"></a>开始配置</h1><h2 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h2><p>VPS 需要先配置 nginx 环境，如果使用的机器是新机器的话，建议手动配置，参照<a href="https://github.com/winshining/nginx-http-flv-module/blob/master/README.CN.md" target="_blank" rel="noopener">这篇文章</a>手动编译所需要的 nginx 环境</p>
 <p>我的服务器已经配置好了 lnmp 环境，所以需要进行升级，这里参照了<a href="https://lnmp.org/faq/lnmp1-2-upgrade.html" target="_blank" rel="noopener">这篇文章</a>进行处理。</p>
 <ol>
 <li>首先下载 <code>nginx-http-flv-module</code> 扩展模块</li>
@@ -457,14 +457,14 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">rtmp &#123;</span><br><span class="line">    server &#123;</span><br><span class="line">        listen 1935;              # 监听的端口</span><br><span class="line">        server_name yourdomain.com;</span><br><span class="line">        chunk_size 4000;</span><br><span class="line">        application live &#123;        # rtmp推流请求路径</span><br><span class="line">            live on;</span><br><span class="line">            record off;</span><br><span class="line">            #publish_notify on;   # 推流验证，和下一行需一起使用</span><br><span class="line">            #on_publish http://localhost/auth.php;    # 推流验证，具体可参照后文</span><br><span class="line"></span><br><span class="line">            hls on;</span><br><span class="line">            hls_path /home/hls/;  # 视频流hls切片文件目录(自己创建)</span><br><span class="line">            hls_fragment 3s;      # hls单个切片时长，会影响延迟</span><br><span class="line">            hls_playlist_length 32s;  # hls总缓存时间，会影响延迟</span><br><span class="line"></span><br><span class="line">            meta on;              # 如果http-flv播放时首帧出现问题，可改为off</span><br><span class="line">            gop_cache on;         # 可以减少首帧延迟</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>两个配置修改完之后重启 Nginx 以使配置生效</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lnmp nginx restart</span><br></pre></td></tr></table></figure>
-<h1 id="三、测试直播"><a href="#三、测试直播" class="headerlink" title="三、测试直播"></a>三、测试直播</h1><p>在 VPS 内推流可使用如下命令</p>
+<h1 id="测试直播"><a href="#测试直播" class="headerlink" title="测试直播"></a>测试直播</h1><p>在 VPS 内推流可使用如下命令</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">streamlink YOUTUBE_LINK best -O | ffmpeg -i pipe:0 -vcodec copy -acodec copy -f flv rtmp://localhost/live/LIVE_NAME</span><br></pre></td></tr></table></figure>
 <p>注1：<code>YOUTUBE_LINK</code> 以及 <code>LIVE_NAME</code> 请根据实际情况替换。</p>
 <p>注2：<code>streamlink</code> 及其依赖安装方法不在本文讨论范围内。</p>
 <p>外部推流将 <code>localhost</code> 替换为前文配置的域名即可</p>
 <p>然后在支持 rtmp 协议的播放器内输入相同的地址即可播放</p>
 <p><img src="https://i.postimg.cc/KY0867gd/live-test.png" alt="效果展示"></p>
-<h1 id="四、后记"><a href="#四、后记" class="headerlink" title="四、后记"></a>四、后记</h1><p>过程中可以说是踩了不少的坑，VPS 几年都没有动过配置，几乎可以说是“年久失修”，环境也很混乱，查了许多教程总算是“揉”出了自己的实际经验。不过折腾的过程还是挺有意思的。这次可以愉快地转圈了（误</p>
+<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>过程中可以说是踩了不少的坑，VPS 几年都没有动过配置，几乎可以说是“年久失修”，环境也很混乱，查了许多教程总算是“揉”出了自己的实际经验。不过折腾的过程还是挺有意思的。这次可以愉快地转圈了（误</p>
 <p><code>#EOF</code></p>
 
       
@@ -734,7 +734,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、前言"><span class="nav-number">1.</span> <span class="nav-text">一、前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、开始配置"><span class="nav-number">2.</span> <span class="nav-text">二、开始配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-配置环境"><span class="nav-number">2.1.</span> <span class="nav-text">1. 配置环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加-Vhost"><span class="nav-number">2.2.</span> <span class="nav-text">添加 Vhost</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改-Nginx-配置文件"><span class="nav-number">2.3.</span> <span class="nav-text">修改 Nginx 配置文件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、测试直播"><span class="nav-number">3.</span> <span class="nav-text">三、测试直播</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、后记"><span class="nav-number">4.</span> <span class="nav-text">四、后记</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#开始配置"><span class="nav-number">2.</span> <span class="nav-text">开始配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#配置环境"><span class="nav-number">2.1.</span> <span class="nav-text">配置环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加-Vhost"><span class="nav-number">2.2.</span> <span class="nav-text">添加 Vhost</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改-Nginx-配置文件"><span class="nav-number">2.3.</span> <span class="nav-text">修改 Nginx 配置文件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#测试直播"><span class="nav-number">3.</span> <span class="nav-text">测试直播</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#后记"><span class="nav-number">4.</span> <span class="nav-text">后记</span></a></li></ol></div>
             
 
           </div>
