@@ -12,7 +12,6 @@ before_install:
   - git config --global user.email "21982749+A1exInamin@users.noreply.github.com"
   - sed -i'' "s~git@github.com:A1exInamin/A1exInamin.github.io.git~https://${REPO_TOKEN}:x-oauth-basic@github.com/A1exInamin/A1exInamin.github.io.git~" _config.yml
 install:
-  - npm install -g hexo
   - npm install -g hexo-cli
   - npm install
 deploy:
