@@ -96,22 +96,18 @@
 
 
 
-  <meta name="description" content="越来越多的人（包括我自己）都在使用 GitHub Pages 来托管自己的博客。相比传统的自行在服务器上搭建博客，GitHub Pages 具有免费、自带版本控制等许多优点。但是 GitHub Pages 只为默认的 *.github.io 域名提供强制 HTTPS 支持，本篇文章提供了通过 CloudFlare 的免费 CDN 服务为 GitHub Pages 博客开启 HTTPS 支持的方法。">
-<meta name="keywords" content="GitHub,博客">
+  <meta name="description" content="前言我的笔记本之前装的是 Windows 10 Pro (LTSC 魔改) + Ubuntu 18.04 LTS，这个组合用了差不多一年。但是可能是因为 Windows 10 魔改过的原因，总会有一些奇奇怪怪的 bug，比如一直无法正常运行 Win32 版本的网易云音乐。终于在前两天下定决心重装了系统，然后也顺便把 Ubuntu 换成了心水已久的 Manjaro。">
+<meta name="keywords" content="Clash,代理">
 <meta property="og:type" content="article">
-<meta property="og:title" content="为 GitHub Pages 启用自定义域名并开启 HTTPS">
-<meta property="og:url" content="https://a1ex.pw/2020/03/31/use-custom-domain-for-github-pages/index.html">
+<meta property="og:title" content="在 Manjaro 上使用 Clash">
+<meta property="og:url" content="https://a1ex.pw/2020/03/31/Use-clash-on-Manjaro/index.html">
 <meta property="og:site_name" content="Sailing to the Rainbow">
-<meta property="og:description" content="越来越多的人（包括我自己）都在使用 GitHub Pages 来托管自己的博客。相比传统的自行在服务器上搭建博客，GitHub Pages 具有免费、自带版本控制等许多优点。但是 GitHub Pages 只为默认的 *.github.io 域名提供强制 HTTPS 支持，本篇文章提供了通过 CloudFlare 的免费 CDN 服务为 GitHub Pages 博客开启 HTTPS 支持的方法。">
+<meta property="og:description" content="前言我的笔记本之前装的是 Windows 10 Pro (LTSC 魔改) + Ubuntu 18.04 LTS，这个组合用了差不多一年。但是可能是因为 Windows 10 魔改过的原因，总会有一些奇奇怪怪的 bug，比如一直无法正常运行 Win32 版本的网易云音乐。终于在前两天下定决心重装了系统，然后也顺便把 Ubuntu 换成了心水已久的 Manjaro。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://a1ex.pw/img/190417_enable_ssl.png">
-<meta property="og:image" content="https://a1ex.pw/img/190417_always_use_https.png">
-<meta property="og:image" content="https://a1ex.pw/img/190417_automatic_http_rewrites.png">
 <meta property="og:updated_time" content="2020-03-31T03:34:00.672Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="为 GitHub Pages 启用自定义域名并开启 HTTPS">
-<meta name="twitter:description" content="越来越多的人（包括我自己）都在使用 GitHub Pages 来托管自己的博客。相比传统的自行在服务器上搭建博客，GitHub Pages 具有免费、自带版本控制等许多优点。但是 GitHub Pages 只为默认的 *.github.io 域名提供强制 HTTPS 支持，本篇文章提供了通过 CloudFlare 的免费 CDN 服务为 GitHub Pages 博客开启 HTTPS 支持的方法。">
-<meta name="twitter:image" content="https://a1ex.pw/img/190417_enable_ssl.png">
+<meta name="twitter:title" content="在 Manjaro 上使用 Clash">
+<meta name="twitter:description" content="前言我的笔记本之前装的是 Windows 10 Pro (LTSC 魔改) + Ubuntu 18.04 LTS，这个组合用了差不多一年。但是可能是因为 Windows 10 魔改过的原因，总会有一些奇奇怪怪的 bug，比如一直无法正常运行 Win32 版本的网易云音乐。终于在前两天下定决心重装了系统，然后也顺便把 Ubuntu 换成了心水已久的 Manjaro。">
 
 
 
@@ -119,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="https://a1ex.pw/2020/03/31/use-custom-domain-for-github-pages/">
+  <link rel="canonical" href="https://a1ex.pw/2020/03/31/Use-clash-on-Manjaro/">
 
 
 
@@ -129,7 +125,7 @@
   };
 </script>
 
-  <title>为 GitHub Pages 启用自定义域名并开启 HTTPS | Sailing to the Rainbow</title>
+  <title>在 Manjaro 上使用 Clash | Sailing to the Rainbow</title>
   
 
 
@@ -312,7 +308,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://a1ex.pw/2020/03/31/use-custom-domain-for-github-pages/">
+    <link itemprop="mainEntityOfPage" href="https://a1ex.pw/2020/03/31/Use-clash-on-Manjaro/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="A1ex_inamin">
@@ -329,7 +325,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">为 GitHub Pages 启用自定义域名并开启 HTTPS
+          <h1 class="post-title" itemprop="name headline">在 Manjaro 上使用 Clash
 
               
             
@@ -355,9 +351,13 @@
                 
               
 
-              <time title="创建时间：2020-03-31 11:34:00" itemprop="dateCreated datePublished" datetime="2020-03-31T11:34:00+08:00">2020-03-31</time>
+              <time title="创建时间：2020-03-31 10:59:34 / 修改时间：11:34:00" itemprop="dateCreated datePublished" datetime="2020-03-31T10:59:34+08:00">2020-03-31</time>
             
 
+            
+              
+
+              
             
           </span>
 
@@ -374,8 +374,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2020/03/31/use-custom-domain-for-github-pages/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/03/31/use-custom-domain-for-github-pages/" itemprop="commentCount"></span>
+                <a href="/2020/03/31/Use-clash-on-Manjaro/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/03/31/Use-clash-on-Manjaro/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -403,19 +403,41 @@
       
 
       
-        <p>越来越多的人（包括我自己）都在使用 <a href="https://pages.github.com" target="_blank" rel="noopener">GitHub Pages</a> 来托管自己的博客。相比传统的自行在服务器上搭建博客，GitHub Pages 具有免费、自带版本控制等许多优点。但是 GitHub Pages 只为默认的 <code>*.github.io</code> 域名提供强制 HTTPS 支持，本篇文章提供了通过 CloudFlare 的免费 CDN 服务为 GitHub Pages 博客开启 HTTPS 支持的方法。</p>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>我的笔记本之前装的是 Windows 10 Pro (LTSC 魔改) + Ubuntu 18.04 LTS，这个组合用了差不多一年。但是可能是因为 Windows 10 魔改过的原因，总会有一些奇奇怪怪的 bug，比如一直无法正常运行 Win32 版本的网易云音乐。终于在前两天下定决心重装了系统，然后也顺便把 Ubuntu 换成了心水已久的 Manjaro。</p>
 <a id="more"></a>
-<h2 id="0x01-自定义域名配置"><a href="#0x01-自定义域名配置" class="headerlink" title="0x01 自定义域名配置"></a>0x01 自定义域名配置</h2><p>注：进行之前需要将您的域名解析服务提供商（Nameserver）设置为 CloudFlare，设置的方法不在此文讨论范围，还请自行查找</p>
-<p>首先在 <code>博客目录/source</code> 目录下新建文件 <code>CNAME</code>，并将域名写入。此处注意，如果想同时使用 <code>www</code> 访问博客的话不需要将 <code>www</code> 写入，下为示例：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">'a1ex.pw'</span> &gt; CNAME</span><br></pre></td></tr></table></figure>
-<p>然后在 CloudFlare 的控制面板中添加 CNAME 记录，并开启右侧的 CDN 服务。</p>
-<h2 id="0x02-SSL-设置"><a href="#0x02-SSL-设置" class="headerlink" title="0x02 SSL 设置"></a>0x02 SSL 设置</h2><p>在 CloudFlare 控制面板中，点击上面的 <strong>Crypto</strong> 标签，将 SSL 一项设置为 Full，将 Always Use HTTPS、Automatic HTTPS Rewrites 开启，就 OK 了</p>
-<p><img src="/img/190417_enable_ssl.png" alt="Pic 01 开启 SSL"></p>
-<p><img src="/img/190417_always_use_https.png" alt="Pic 02 Always Use HTTPS"></p>
-<p><img src="/img/190417_automatic_http_rewrites.png" alt="Pic 03 Automatic HTTP Rewrites"></p>
-<p>另外可以根据实际需求选择是否开启 HSTS Preload 和 TLS v1.3。</p>
-<h2 id="0xFF-结语"><a href="#0xFF-结语" class="headerlink" title="0xFF 结语"></a>0xFF 结语</h2><p>在之前查找资料的时候发现了一些使用 Page Rules 来实现强制 HTTPS 的文章，不知道是不是因为写文时还没有上述的 Always Use HTTPS 和 Automatic HTTP Rewrites 功能，希望有了解的人能解答一下。</p>
-<p><code># EOF</code></p>
+<h1 id="尝试"><a href="#尝试" class="headerlink" title="尝试"></a>尝试</h1><h2 id="初探-Clashy"><a href="#初探-Clashy" class="headerlink" title="初探 Clashy"></a>初探 Clashy</h2><p>装好了 Manjaro 之后自然要配置科学上网的一套东西，先是下载了 <a href="https://github.com/SpongeNobody/Clashy" target="_blank" rel="noopener">Clashy</a>，但是运行起来发现更新配置文件好像总会有些问题，外加上实在接受不了这个界面，索性换成了原版 Clash。</p>
+<h2 id="转战-Clash"><a href="#转战-Clash" class="headerlink" title="转战 Clash"></a>转战 Clash</h2><h3 id="安装-Clash"><a href="#安装-Clash" class="headerlink" title="安装 Clash"></a>安装 Clash</h3><p>原版 Clash 在 Manjaro 下的安装十分方便，有现成的 AUR 包，直接在终端内运行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yaourt -S clash</span><br></pre></td></tr></table></figure>
+<p>便可以直接安装了。</p>
+<p>注：<code>yaourt</code> 安装方法本文不涉及。</p>
+<h3 id="配置后台运行及开机自启动"><a href="#配置后台运行及开机自启动" class="headerlink" title="配置后台运行及开机自启动"></a>配置后台运行及开机自启动</h3><p>这里使用的是官方文档所推荐的 <code>pm2</code>，这里同样使用</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yaourt -S pm2</span><br></pre></td></tr></table></figure>
+<p>便可以安装。安装后运行如下命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pm2 start clash</span><br><span class="line">pm2 startup</span><br><span class="line">pm2 save</span><br></pre></td></tr></table></figure>
+<p>这时候 Clash 就会在后台运行且加入到开机自启动的列表之中了。</p>
+<h3 id="创建-Clash-配置文件更新脚本"><a href="#创建-Clash-配置文件更新脚本" class="headerlink" title="创建 Clash 配置文件更新脚本"></a>创建 Clash 配置文件更新脚本</h3><p>运行 Clash 后默认会在 <code>$HOME/.config/clash</code> 目录下生成 <code>config.yaml</code> 并下载 <code>Country.mmdb</code>，如果 <code>Country.mmdb</code> 下载失败的话可以手动下载一份然后复制到这个目录。</p>
+<p>重点是 <code>config.yaml</code>，在 CFW / ClashX / Clash for Android 中都提供了内建的配置文件托管功能，但是在 Linux 下我们就要自力更生了。</p>
+<p>首先要获取你的托管配置地址，然后新建一个脚本文件（这里以 <code>update_subscription.sh</code> 为例），写入如下内容：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="built_in">source</span> /etc/profile</span><br><span class="line"><span class="built_in">source</span> /home/your_user_name/.bash_profile</span><br><span class="line">SUBSCRIPTION_LINK=<span class="string">'https://path/to/your/subscription/link'</span></span><br><span class="line">wget <span class="variable">$SUBSCRIPTION_LINK</span> -O /home/your_user_name/.config/clash/config.yaml</span><br><span class="line">curl -X PUT -H <span class="string">"Content-Type: application/json"</span> -d <span class="string">'&#123;"path": "/home/your_user_name/.config/clash/config.yaml"&#125;'</span> http://127.0.0.1:port/configs</span><br></pre></td></tr></table></figure>
+<p>注意以下几点：</p>
+<ol>
+<li>将 <code>your_user_name</code> 替换为实际的用户名</li>
+<li><code>SUBSCRIPTION_LINK</code> 后的内容请替换成实际的托管地址</li>
+<li><code>port</code> 替换为配置文件中所设置的 RESTful API 端口</li>
+</ol>
+<p>这个脚本的作用是，从托管地址下载配置文件并覆盖原有的 <code>config.yaml</code>，同时通过 Clash 提供的 RESTful API 重载配置文件</p>
+<h3 id="配置自动更新"><a href="#配置自动更新" class="headerlink" title="配置自动更新"></a>配置自动更新</h3><p>这里所使用的工具是 <code>crontab</code>，使用如下命令安装并配置开机自启动：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yaourt -S cronie</span><br><span class="line">sudo systemctl <span class="built_in">enable</span> cronie.service &amp;&amp; sudo systemctl start cronie.service</span><br></pre></td></tr></table></figure>
+<p>新建一个空文件以方便载入 crontab</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nano ~/MyCrontab</span><br></pre></td></tr></table></figure>
+<p>在文件中写入以下内容</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0 */3 * * * <span class="built_in">cd</span> /home/your_user_name/.config/clash; bash /home/your_user_name/.config/clash/update_subscription.sh &gt; /home/your_user_name/.config/clash/subscription_history.log 2&gt;&amp;1</span><br></pre></td></tr></table></figure>
+<p>同样要将 <code>your_user_name</code> 替换为实际用户名。</p>
+<p>这里的执行效果是每 3 个小时更新一次配置文件并将日志写入文件，crontab 语法此处不涉及，请自行搜索</p>
+<p>接下来就是装入 crontab</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">crontab ~/MyCrontab</span><br></pre></td></tr></table></figure>
+<p>这样就可以实现脚本的自动更新以及配置重载啦</p>
+<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>归根结底还是学艺不精，光是最后折腾 crontab 前前后后就用了好几个小时的时间（捂脸），好在最后成果还是不错的。</p>
 
       
     </div>
@@ -450,7 +472,7 @@
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="https://a1ex.pw/2020/03/31/use-custom-domain-for-github-pages/" title="为 GitHub Pages 启用自定义域名并开启 HTTPS">https://a1ex.pw/2020/03/31/use-custom-domain-for-github-pages/</a>
+    <a href="https://a1ex.pw/2020/03/31/Use-clash-on-Manjaro/" title="在 Manjaro 上使用 Clash">https://a1ex.pw/2020/03/31/Use-clash-on-Manjaro/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -463,9 +485,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/GitHub/" rel="tag"># GitHub</a>
+            <a href="/tags/Clash/" rel="tag"># Clash</a>
           
-            <a href="/tags/博客/" rel="tag"># 博客</a>
+            <a href="/tags/代理/" rel="tag"># 代理</a>
           
         </div>
       
@@ -478,8 +500,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/03/31/Use-clash-on-Manjaro/" rel="next" title="在 Manjaro 上使用 Clash">
-                <i class="fa fa-chevron-left"></i> 在 Manjaro 上使用 Clash
+              <a href="/2020/03/03/A-method-to-improve-stability-of-ULL-rebroadcasting/" rel="next" title="在服务器上实现对YouTube低延迟的缓冲以方便转播">
+                <i class="fa fa-chevron-left"></i> 在服务器上实现对YouTube低延迟的缓冲以方便转播
               </a>
             
           </div>
@@ -487,6 +509,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/03/31/use-custom-domain-for-github-pages/" rel="prev" title="为 GitHub Pages 启用自定义域名并开启 HTTPS">
+                为 GitHub Pages 启用自定义域名并开启 HTTPS <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -693,7 +719,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0x01-自定义域名配置"><span class="nav-number">1.</span> <span class="nav-text">0x01 自定义域名配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x02-SSL-设置"><span class="nav-number">2.</span> <span class="nav-text">0x02 SSL 设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0xFF-结语"><span class="nav-number">3.</span> <span class="nav-text">0xFF 结语</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#尝试"><span class="nav-number">2.</span> <span class="nav-text">尝试</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#初探-Clashy"><span class="nav-number">2.1.</span> <span class="nav-text">初探 Clashy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#转战-Clash"><span class="nav-number">2.2.</span> <span class="nav-text">转战 Clash</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-Clash"><span class="nav-number">2.2.1.</span> <span class="nav-text">安装 Clash</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置后台运行及开机自启动"><span class="nav-number">2.2.2.</span> <span class="nav-text">配置后台运行及开机自启动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建-Clash-配置文件更新脚本"><span class="nav-number">2.2.3.</span> <span class="nav-text">创建 Clash 配置文件更新脚本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置自动更新"><span class="nav-number">2.2.4.</span> <span class="nav-text">配置自动更新</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#后记"><span class="nav-number">3.</span> <span class="nav-text">后记</span></a></li></ol></div>
             
 
           </div>
@@ -863,9 +889,9 @@
 
 <script>
   var disqus_config = function() {
-    this.page.url = "https://a1ex.pw/2020/03/31/use-custom-domain-for-github-pages/";
-    this.page.identifier = "2020/03/31/use-custom-domain-for-github-pages/";
-    this.page.title = '为 GitHub Pages 启用自定义域名并开启 HTTPS';
+    this.page.url = "https://a1ex.pw/2020/03/31/Use-clash-on-Manjaro/";
+    this.page.identifier = "2020/03/31/Use-clash-on-Manjaro/";
+    this.page.title = '在 Manjaro 上使用 Clash';
     };
   function loadComments() {
     var d = document, s = d.createElement('script');
