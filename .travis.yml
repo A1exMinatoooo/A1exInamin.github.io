@@ -1,7 +1,9 @@
 language: node_js
 node_js: stable
 script: "true"
-
+branches:
+  only:
+    - hexo
 cache:
   directories:
     - node_modules
@@ -18,6 +20,5 @@ deploy:
   skip_cleanup: true
   provider: script
   script: sh deploy.sh
-branches:
-  only:
-    - hexo
+  on:
+    branch: hexo
