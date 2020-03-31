@@ -7,10 +7,11 @@ cache:
   directories:
     - node_modules
 before_install:
-  - git config --global user.name "A1exLiu"
+  - git config --global push.default matching
+  - git config --global user.name "A1exLiu via Travis CI"
   - git config --global user.email "21982749+A1exInamin@users.noreply.github.com"
-  - npm install -g hexo-cli
-  - export HEXO_DEPLOYER_REPO=https://$REPO_TOKEN@github.com/A1exInamin/A1exInamin.github.io.git
+  - sed -i'' "s~git@github.com:A1exInamin/A1exInamin.github.io.git~https://${REPO_TOKEN}:x-oauth-basic@github.com/A1exInamin/A1exInamin.github.io.git~"
+  _config.yml
 install:
   - npm install -g hexo
   - npm install -g hexo-cli
@@ -19,3 +20,8 @@ script:
   - hexo clean
   - hexo generate
   - hexo deploy
+deploy:
+  skip_cleanup: true
+  provider: script
+  script: sh deploy.sh
+  on branch: master
