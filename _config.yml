@@ -84,4 +84,4 @@ theme: next-reloaded
 deploy:
   type: git
   # repo: https://github.com/A1exInamin/A1exInamin.github.io.git
-  branch: gh-pages
+  branch: master
