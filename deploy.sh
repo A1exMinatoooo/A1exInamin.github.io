@@ -1,5 +1,11 @@
 #!/bin/bash
 
+if [ -d "./.deploy_git" ]; then
+  echo "Removing .deploy_git folder..."
+  rm -rf ./.deploy_git
+  echo "Folder removed."
+fi
+
 # Initialize target with currently deployed files
 git clone --depth 1 --branch=master https://github.com/A1exInamin/A1exInamin.github.io.git .deploy_git
 
