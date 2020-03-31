@@ -12,7 +12,9 @@ before_install:
   - npm install -g hexo-cli
   - export HEXO_DEPLOYER_REPO=https://$REPO_TOKEN@github.com/A1exInamin/A1exInamin.github.io.git
 install:
-  - npm i
+  - npm install -g hexo
+  - npm install -g hexo-cli
+  - npm install
 script:
   - hexo clean
   - hexo generate
