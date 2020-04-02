@@ -107,7 +107,7 @@
 <meta property="og:image" content="https://i.postimg.cc/4xmRWznk/IMG-20200402-194112.jpg">
 <meta property="og:image" content="https://i.postimg.cc/J0kB3yJb/2020-04-02-19-45-19-414.jpg">
 <meta property="og:image" content="https://i.postimg.cc/Vk1KKtgs/912-F337-B696-B624-D33963-E2-A46821-BA0.jpg">
-<meta property="og:updated_time" content="2020-04-02T12:06:12.736Z">
+<meta property="og:updated_time" content="2020-04-02T12:11:27.563Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在更新 Windows 或 BIOS 之后找回丢失的 grub 引导">
 <meta name="twitter:description" content="今天在更新之后发现 grub 引导从启动项菜单中消失了，遂折腾一番，记录在此，以备不时之需。">
@@ -355,7 +355,7 @@
                 
               
 
-              <time title="创建时间：2020-04-02 20:34:52 / 修改时间：20:06:12" itemprop="dateCreated datePublished" datetime="2020-04-02T20:34:52+08:00">2020-04-02</time>
+              <time title="创建时间：2020-04-02 20:34:52 / 修改时间：20:11:27" itemprop="dateCreated datePublished" datetime="2020-04-02T20:34:52+08:00">2020-04-02</time>
             
 
             
@@ -421,7 +421,7 @@
 <p>得知 grub 分区之后，依次执行下列命令，执行完最后一条命令之后便会回到引导菜单，看到熟悉的 Manjaro Linux 引导项了</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">set prefix=(hd2,gpt4)/boot/grub</span><br><span class="line">set root=hd2,gpt4</span><br><span class="line">insmod normal</span><br><span class="line">normal</span><br></pre></td></tr></table></figure>
 <p><strong>注意：请务必根据实际情况修改分区，切勿直接照抄！</strong></p>
-<p><img src="https://i.postimg.cc/J0kB3yJb/2020-04-02-19-45-19-414.jpg" alt="启动项回来了]"></p>
+<p><img src="https://i.postimg.cc/J0kB3yJb/2020-04-02-19-45-19-414.jpg" alt="启动项回来了"></p>
 <p>选择 <code>Manjaro Linux</code> 引导进入系统，打开终端，输入如下命令查看 <code>/boot</code> 分区位置</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mount | grep boot</span><br></pre></td></tr></table></figure>
 <p>得到类似如下的输出</p>
