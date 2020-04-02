@@ -1316,7 +1316,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ff6c55;
+  background: #f529ff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2736,6 +2736,13 @@ ul.breadcrumb li + li:last-child {
 }
 .fa-custom {
   font-family: "iconfont" !important;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
 }
 .bilibili:before {
   content: "\eea8";
