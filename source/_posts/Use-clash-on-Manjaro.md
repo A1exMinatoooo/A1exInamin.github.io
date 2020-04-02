@@ -3,6 +3,7 @@ title: 在 Manjaro 上使用 Clash
 date: 2020-03-31 10:59:34
 tags:
 - Clash
+- Manjaro
 - 代理
 catagories:
 - 瞎折腾
