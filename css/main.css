@@ -1,8 +1,9 @@
 :root {
-  --body-bg-color: #eee;
+  --body-bg-color: #f5f7f9;
   --content-bg-color: #fff;
   --card-bg-color: #f5f5f5;
   --text-color: #555;
+  --blockquote-color: #666;
   --link-color: #555;
   --link-hover-color: #222;
   --brand-color: #fff;
@@ -23,6 +24,7 @@
     --content-bg-color: #333;
     --card-bg-color: #555;
     --text-color: #ccc;
+    --blockquote-color: #bbb;
     --link-color: #ccc;
     --link-hover-color: #eee;
     --brand-color: #ddd;
@@ -276,7 +278,7 @@ hr {
 }
 blockquote {
   border-left: 4px solid #ddd;
-  color: #666;
+  color: var(--blockquote-color);
   margin: 0;
   padding: 0 15px;
 }
@@ -323,7 +325,6 @@ th,
 td {
   font-weight: normal;
   padding: 8px;
-  text-align: left;
   vertical-align: middle;
 }
 th,
@@ -619,27 +620,20 @@ pre .javascript .function {
   position: relative;
   text-align: center;
 }
-.blockquote-center::before,
-.blockquote-center::after {
-  background-repeat: no-repeat;
-  background-size: 22px 22px;
-  content: ' ';
+.blockquote-center .fa {
   display: block;
-  height: 24px;
-  opacity: 0.2;
+  opacity: 0.6;
   position: absolute;
   width: 100%;
 }
-.blockquote-center::before {
-  background-image: url("../images/quote-l.svg");
-  background-position: 0 -6px;
+.blockquote-center .fa-quote-left {
   border-top: 1px solid #ccc;
+  text-align: left;
   top: -20px;
 }
-.blockquote-center::after {
-  background-image: url("../images/quote-r.svg");
-  background-position: 100% 8px;
+.blockquote-center .fa-quote-right {
   border-bottom: 1px solid #ccc;
+  text-align: right;
   bottom: -20px;
 }
 .blockquote-center p,
@@ -1316,7 +1310,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #2dc87d;
+  background: #2e45ff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -1394,7 +1388,7 @@ pre .javascript .function {
 }
 .sidebar-nav li {
   border-bottom: 1px solid transparent;
-  color: #555;
+  color: var(--text-color);
   cursor: pointer;
   display: inline-block;
   font-size: 0.875em;
@@ -2090,10 +2084,10 @@ pre .javascript .function {
   width: 90%;
 }
 .reward-container button {
-  background: #ff2a2a;
-  border: 0;
-  border-radius: 5px;
-  color: #fff;
+  background: transparent;
+  border: 1px solid #fc6423;
+  border-radius: 0;
+  color: #fc6423;
   cursor: pointer;
   line-height: 2;
   outline: 0;
@@ -2101,7 +2095,9 @@ pre .javascript .function {
   vertical-align: text-top;
 }
 .reward-container button:hover {
-  background: #f55;
+  background: #fc6423;
+  border: 1px solid transparent;
+  color: #fa9366;
 }
 #qr {
   padding-top: 20px;
@@ -2302,7 +2298,7 @@ ul.breadcrumb li + li:last-child {
   margin: 10px;
 }
 .tag-cloud a:hover {
-  color: #222 !important;
+  color: var(--link-hover-color) !important;
 }
 .header {
   margin: 0 auto;
@@ -2327,7 +2323,7 @@ ul.breadcrumb li + li:last-child {
 .header-inner {
   background: var(--content-bg-color);
   border-radius: initial;
-  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12);
+  box-shadow: initial;
   overflow: hidden;
   padding: 0;
   position: absolute;
@@ -2360,7 +2356,7 @@ ul.breadcrumb li + li:last-child {
 .content-wrap {
   background: var(--content-bg-color);
   border-radius: initial;
-  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12);
+  box-shadow: initial;
   box-sizing: border-box;
   padding: 40px;
   width: calc(100% - 252px);
@@ -2437,17 +2433,6 @@ ul.breadcrumb li + li:last-child {
     display: none;
   }
 }
-.menu-item-active a::after {
-  background: #bbb;
-  border-radius: 50%;
-  content: ' ';
-  height: 6px;
-  margin-top: -3px;
-  position: absolute;
-  right: 15px;
-  top: 50%;
-  width: 6px;
-}
 .menu .menu-item {
   display: block;
   margin: 0;
@@ -2473,6 +2458,17 @@ ul.breadcrumb li + li:last-child {
   text-shadow: 1px 1px 0 rgba(0,0,0,0.1);
   vertical-align: middle;
 }
+.main-menu .menu-item-active a::after {
+  background: #bbb;
+  border-radius: 50%;
+  content: ' ';
+  height: 6px;
+  margin-top: -3px;
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  width: 6px;
+}
 .sub-menu {
   background: var(--content-bg-color);
   border-bottom: 1px solid #ddd;
@@ -2492,10 +2488,6 @@ ul.breadcrumb li + li:last-child {
 .sub-menu .menu-item span.exturl:hover {
   background: transparent;
   color: #fc6423;
-}
-.sub-menu .menu-item a::after,
-.sub-menu .menu-item span.exturl::after {
-  content: initial !important;
 }
 .sub-menu .menu-item-active a {
   border-bottom-color: #fc6423;
@@ -2522,7 +2514,7 @@ ul.breadcrumb li + li:last-child {
 .sidebar-inner {
   background: var(--content-bg-color);
   border-radius: initial;
-  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12), 0 -1px 0.5px 0 rgba(0,0,0,0.09);
+  box-shadow: initial;
   box-sizing: border-box;
   color: var(--text-color);
   width: 240px;
@@ -2604,130 +2596,6 @@ ul.breadcrumb li + li:last-child {
 }
 .links-of-blogroll-item {
   padding: 0;
-}
-.content-wrap {
-  background: initial;
-  box-shadow: initial;
-  padding: initial;
-}
-.post-block {
-  background: var(--content-bg-color);
-  border-radius: initial;
-  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12);
-  padding: 40px;
-}
-.post-block + .post-block {
-  border-radius: initial;
-  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12), 0 -1px 0.5px 0 rgba(0,0,0,0.09);
-  margin-top: 12px;
-}
-.comments {
-  background: var(--content-bg-color);
-  border-radius: initial;
-  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12), 0 -1px 0.5px 0 rgba(0,0,0,0.09);
-  margin-top: 12px;
-  padding: 40px;
-}
-.tabs-comment {
-  margin-top: 1em;
-}
-.content {
-  padding-top: initial;
-}
-.post-eof {
-  display: none;
-}
-.pagination {
-  background: var(--content-bg-color);
-  border-radius: initial;
-  border-top: initial;
-  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12), 0 -1px 0.5px 0 rgba(0,0,0,0.09);
-  margin: 12px 0 0;
-  padding: 10px 0 10px;
-}
-.pagination .prev,
-.pagination .next,
-.pagination .page-number {
-  margin-bottom: initial;
-  top: initial;
-}
-.main {
-  padding-bottom: initial;
-}
-.footer {
-  bottom: auto;
-}
-.sub-menu {
-  border-bottom: initial;
-  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12);
-}
-.sub-menu + .content .post-block {
-  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12), 0 -1px 0.5px 0 rgba(0,0,0,0.09);
-  margin-top: 12px;
-}
-@media (min-width: 768px) and (max-width: 991px) {
-  .sub-menu + .content .post-block {
-    margin-top: 10px;
-  }
-}
-@media (max-width: 767px) {
-  .sub-menu + .content .post-block {
-    margin-top: 8px;
-  }
-}
-.post-body h1,
-.post-body h2 {
-  border-bottom: 1px solid #eee;
-}
-.post-body h3 {
-  border-bottom: 1px dotted #eee;
-}
-@media (min-width: 768px) and (max-width: 991px) {
-  .content-wrap {
-    padding: 10px;
-  }
-  .posts-expand .post-button {
-    margin-top: 20px;
-  }
-  .post-block {
-    border-radius: initial;
-    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12), 0 -1px 0.5px 0 rgba(0,0,0,0.09);
-    padding: 20px;
-  }
-  .post-block + .post-block {
-    margin-top: 10px;
-  }
-  .comments {
-    margin-top: 10px;
-    padding: 10px 20px;
-  }
-  .pagination {
-    margin: 10px 0 0;
-  }
-}
-@media (max-width: 767px) {
-  .content-wrap {
-    padding: 8px;
-  }
-  .posts-expand .post-button {
-    margin: 12px 0;
-  }
-  .post-block {
-    border-radius: initial;
-    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12), 0 -1px 0.5px 0 rgba(0,0,0,0.09);
-    min-height: auto;
-    padding: 12px;
-  }
-  .post-block + .post-block {
-    margin-top: 8px;
-  }
-  .comments {
-    margin-top: 8px;
-    padding: 10px 12px;
-  }
-  .pagination {
-    margin: 8px 0 0;
-  }
 }
 @font-face {
   font-family: "iconfont";
