@@ -2,10 +2,9 @@
 title: 在服务器上实现对YouTube低延迟的缓冲以方便转播
 date: 2020-03-03 08:53:00
 tags:
-- YouTube
-- Bilibili
-- 转播man
-- 转圈man
+- 转播
+- Vtuber
+- 虚拟主播
 catagories:
 - 瞎折腾
 ---
