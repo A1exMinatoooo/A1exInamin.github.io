@@ -84,4 +84,4 @@ theme: next
 deploy:
   type: git
   repo: git@github.com:A1exMinatoooo/A1exInamin.github.io.git
-  branch: master
+  branch: gh-pages
