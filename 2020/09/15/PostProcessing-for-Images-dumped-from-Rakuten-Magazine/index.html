@@ -29,17 +29,17 @@
 <meta property="og:site_name" content="阿莱桑的不妙屋">
 <meta property="og:description" content="昨天偶然浏览到了烈之斩的文章，发现原来我一直在用的乐天杂志是有高清图片提供的，但只在手动触发后才会加载，文章内也谈到了对保存下载的文件的处理方式，便诞生了写一个小程序来实现批量处理的想法，以下是实现思路。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://a1ex.pw/img/2020/09/15/rakuten-1.png">
-<meta property="og:image" content="https://a1ex.pw/img/2020/09/15/rakuten-2.png">
-<meta property="og:image" content="https://a1ex.pw/img/2020/09/15/rakuten-3.png">
-<meta property="og:image" content="https://a1ex.pw/img/2020/09/15/rakuten-4.png">
+<meta property="og:image" content="https://a1ex.pw/img/2020/09/15/rakuten-1.jpg">
+<meta property="og:image" content="https://a1ex.pw/img/2020/09/15/rakuten-2.jpg">
+<meta property="og:image" content="https://a1ex.pw/img/2020/09/15/rakuten-3.jpg">
+<meta property="og:image" content="https://a1ex.pw/img/2020/09/15/rakuten-4.jpg">
 <meta property="article:published_time" content="2020-09-15T13:14:31.000Z">
-<meta property="article:modified_time" content="2022-05-19T12:20:26.911Z">
+<meta property="article:modified_time" content="2022-05-19T12:31:01.291Z">
 <meta property="article:author" content="A1exMinatoooo">
 <meta property="article:tag" content="杂志">
 <meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://a1ex.pw/img/2020/09/15/rakuten-1.png">
+<meta name="twitter:image" content="https://a1ex.pw/img/2020/09/15/rakuten-1.jpg">
 
 <link rel="canonical" href="https://a1ex.pw/2020/09/15/PostProcessing-for-Images-dumped-from-Rakuten-Magazine/">
 
@@ -244,13 +244,13 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> https://path/to/AVED0_A0_L0_P&#123;00..83&#125;.pdf &gt; dllist.txt</span><br><span class="line"><span class="comment"># sed 命令因操作系统不同可能会有变化，以下为 macOS 下的使用方法</span></span><br><span class="line"><span class="comment"># 这条命令会将 echo 生成的字符串中的空格替换成换行符，方便 aria2c 调用</span></span><br><span class="line">sed -i <span class="string">&#x27;&#x27;</span> <span class="string">&#x27;s/[ ]/\&#x27;</span>$<span class="string">&#x27;\n/g&#x27;</span> dllist.txt</span><br></pre></td></tr></table></figure>
 
 <p>这样我们会得到一个包含所有图片下载地址的文本文档</p>
-<p><img src="/img/2020/09/15/rakuten-1.png"></p>
+<p><img src="/img/2020/09/15/rakuten-1.jpg"></p>
 <h2 id="下载文件"><a href="#下载文件" class="headerlink" title="下载文件"></a>下载文件</h2><p>下载使用 aria2c，在终端内输入如下命令</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">aria2c -c -j 16 -i dllist.txt</span><br></pre></td></tr></table></figure>
 
 <p>便会开始下载，<code>-j</code> 为指定同时下载的文件数量，<code>-c</code> 代表开启断点续传</p>
 <p>下载好的文件如下图所示</p>
-<p><img src="/img/2020/09/15/rakuten-2.png"></p>
+<p><img src="/img/2020/09/15/rakuten-2.jpg"></p>
 <h1 id="编写处理脚本"><a href="#编写处理脚本" class="headerlink" title="编写处理脚本"></a>编写处理脚本</h1><h2 id="处理文件头"><a href="#处理文件头" class="headerlink" title="处理文件头"></a>处理文件头</h2><p>首先，为了方便下一步重命名处理，我们需要先将文件名头部的 <code>AVED0_A0_L0_P</code> 去除，实现代码如下</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 省略遍历部分，需导入 re 包</span></span><br><span class="line">result = re.match(<span class="string">r&quot;(AVED0\_A0\_L0\_P)(.*)&quot;</span>, filename).group(<span class="number">2</span>)</span><br><span class="line"><span class="keyword">if</span> result:</span><br><span class="line">    os.rename(filename, result)</span><br></pre></td></tr></table></figure>
 
@@ -280,9 +280,9 @@
 <p>最后直接在主函数内进行调用即可</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    end_cnt = process_files()</span><br><span class="line">    rename_files(end_cnt)</span><br><span class="line">    del_files()</span><br><span class="line">    stitch_image()</span><br></pre></td></tr></table></figure>
 
-<h1 id="使用示例"><a href="#使用示例" class="headerlink" title="使用示例"></a>使用示例</h1><p><img src="/img/2020/09/15/rakuten-3.png"></p>
+<h1 id="使用示例"><a href="#使用示例" class="headerlink" title="使用示例"></a>使用示例</h1><p><img src="/img/2020/09/15/rakuten-3.jpg"></p>
 <p>标准输出会提示重命名操作以及合并操作，待程序执行完后就可以获得源文件以及拼接好的图片了</p>
-<p><img src="/img/2020/09/15/rakuten-4.png"></p>
+<p><img src="/img/2020/09/15/rakuten-4.jpg"></p>
 <h1 id="说在最后"><a href="#说在最后" class="headerlink" title="说在最后"></a>说在最后</h1><p>之前用过 Kindle Unlimited &#x2F; Magazine Walker &#x2F; Book Walker 読み放題，可以说这三家都比乐天的画质要好，但是 Kindle Unlimited 这几个月的书越来越少，Magazine Walker 停止服务后新开的 Book Walker 読み放題没有声 G 而且阅读器看一部分杂志的时候多了一圈恶心的白框，乐天杂志现在反而成了性价比最高的选择。</p>
 <p>说白了还是穷（捂脸）</p>
 <p><code># EOF</code></p>
