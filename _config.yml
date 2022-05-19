@@ -3,8 +3,8 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Sailing to the Rainbow
-subtitle:
+title: 阿莱桑的不妙屋
+subtitle: 45 度打工人
 description:
 keywords:
 author: A1exMinatoooo
@@ -47,6 +47,17 @@ highlight:
   line_number: true
   auto_detect: false
   tab_replace:
+
+# hexo-symbols-count-time
+symbols_count_time:
+  symbols: true
+  time: true
+  total_symbols: true
+  total_time: true
+  exclude_codeblock: false
+  awl: 2
+  wpm: 275
+  suffix: "mins."
 
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
