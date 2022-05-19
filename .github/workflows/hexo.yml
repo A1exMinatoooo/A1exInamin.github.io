@@ -19,7 +19,7 @@ jobs:
           persist-credentials: false
 
       - name: Build
-        run: npm install && npm install hexo -g && hexo g
+        run: npm install && npm install hexo-cli -g && hexo clean && hexo g
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3
