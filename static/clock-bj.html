@@ -22,25 +22,19 @@
     var CONFIG = {"hostname":"a1ex.pw","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="越来越多的人（包括我自己）都在使用 GitHub Pages 来托管自己的博客。相比传统的自行在服务器上搭建博客，GitHub Pages 具有免费、自带版本控制等许多优点。但是 GitHub Pages 只为默认的 *.github.io 域名提供强制 HTTPS 支持，本篇文章提供了通过 CloudFlare 的免费 CDN 服务为 GitHub Pages 博客开启 HTTPS 支持的方法。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="为 GitHub Pages 启用自定义域名并开启 HTTPS">
-<meta property="og:url" content="https://a1ex.pw/2019/04/16/use-custom-domain-for-github-pages/index.html">
+  <meta name="description" content="A simple clock                              &#x2F;&#x2F; https:&#x2F;&#x2F;stackoverflow.com&#x2F;questions&#x2F;901115&#x2F;how-can-i-get-query-string-values-in-javascript       var urlParams;       (function () {">
+<meta property="og:type" content="website">
+<meta property="og:title" content="阿莱桑的不妙屋">
+<meta property="og:url" content="https://a1ex.pw/static/clock-bj.html">
 <meta property="og:site_name" content="阿莱桑的不妙屋">
-<meta property="og:description" content="越来越多的人（包括我自己）都在使用 GitHub Pages 来托管自己的博客。相比传统的自行在服务器上搭建博客，GitHub Pages 具有免费、自带版本控制等许多优点。但是 GitHub Pages 只为默认的 *.github.io 域名提供强制 HTTPS 支持，本篇文章提供了通过 CloudFlare 的免费 CDN 服务为 GitHub Pages 博客开启 HTTPS 支持的方法。">
+<meta property="og:description" content="A simple clock                              &#x2F;&#x2F; https:&#x2F;&#x2F;stackoverflow.com&#x2F;questions&#x2F;901115&#x2F;how-can-i-get-query-string-values-in-javascript       var urlParams;       (function () {">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://a1ex.pw/img/190417_enable_ssl.png">
-<meta property="og:image" content="https://a1ex.pw/img/190417_always_use_https.png">
-<meta property="og:image" content="https://a1ex.pw/img/190417_automatic_http_rewrites.png">
-<meta property="article:published_time" content="2019-04-16T06:58:30.000Z">
-<meta property="article:modified_time" content="2022-07-10T09:10:10.634Z">
+<meta property="article:published_time" content="2022-07-10T09:10:10.762Z">
+<meta property="article:modified_time" content="2022-07-10T09:10:10.762Z">
 <meta property="article:author" content="A1exMinatoooo">
-<meta property="article:tag" content="GitHub">
-<meta property="article:tag" content="博客">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://a1ex.pw/img/190417_enable_ssl.png">
 
-<link rel="canonical" href="https://a1ex.pw/2019/04/16/use-custom-domain-for-github-pages/">
+<link rel="canonical" href="https://a1ex.pw/static/clock-bj">
 
 
 <script id="page-configurations">
@@ -48,12 +42,13 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : true,
+    isPost : false,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>为 GitHub Pages 启用自定义域名并开启 HTTPS | 阿莱桑的不妙屋</title>
+  <title> | 阿莱桑的不妙屋
+</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109667735-2"></script>
     <script>
@@ -161,142 +156,87 @@
       <div class="main-inner">
         <div class="content-wrap">
           
+  
+  
 
-          <div class="content post posts-expand">
+          <div class="content page posts-expand">
             
 
     
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://a1ex.pw/2019/04/16/use-custom-domain-for-github-pages/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/img/avatar.png">
-      <meta itemprop="name" content="A1exMinatoooo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="阿莱桑的不妙屋">
-    </span>
+    
+    
+    <div class="post-block" lang="zh-CN">
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          为 GitHub Pages 启用自定义域名并开启 HTTPS
-        </h1>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
+<h1 class="post-title" itemprop="name headline">
+</h1>
 
-              <time title="创建时间：2019-04-16 14:58:30" itemprop="dateCreated datePublished" datetime="2019-04-16T14:58:30+08:00">2019-04-16</time>
-            </span>
-
-          
+<div class="post-meta">
   
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2019/04/16/use-custom-domain-for-github-pages/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/04/16/use-custom-domain-for-github-pages/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>654</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
 
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-        <p>越来越多的人（包括我自己）都在使用 <a target="_blank" rel="noopener" href="https://pages.github.com/">GitHub Pages</a> 来托管自己的博客。相比传统的自行在服务器上搭建博客，GitHub Pages 具有免费、自带版本控制等许多优点。但是 GitHub Pages 只为默认的 <code>*.github.io</code> 域名提供强制 HTTPS 支持，本篇文章提供了通过 CloudFlare 的免费 CDN 服务为 GitHub Pages 博客开启 HTTPS 支持的方法。</p>
-<span id="more"></span>
-
-<h2 id="0x01-自定义域名配置"><a href="#0x01-自定义域名配置" class="headerlink" title="0x01 自定义域名配置"></a>0x01 自定义域名配置</h2><p>注：进行之前需要将您的域名解析服务提供商（Nameserver）设置为 CloudFlare，设置的方法不在此文讨论范围，还请自行查找</p>
-<p>首先在 <code>博客目录/source</code> 目录下新建文件 <code>CNAME</code>，并将域名写入。此处注意，如果想同时使用 <code>www</code> 访问博客的话不需要将 <code>www</code> 写入，下为示例：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;a1ex.pw&#x27;</span> &gt; CNAME</span><br></pre></td></tr></table></figure>
-
-<p>然后在 CloudFlare 的控制面板中添加 CNAME 记录，并开启右侧的 CDN 服务。</p>
-<h2 id="0x02-SSL-设置"><a href="#0x02-SSL-设置" class="headerlink" title="0x02 SSL 设置"></a>0x02 SSL 设置</h2><p>在 CloudFlare 控制面板中，点击上面的 <strong>Crypto</strong> 标签，将 SSL 一项设置为 Full，将 Always Use HTTPS、Automatic HTTPS Rewrites 开启，就 OK 了</p>
-<p><img data-src="/img/190417_enable_ssl.png" alt="Pic 01 开启 SSL"></p>
-<p><img data-src="/img/190417_always_use_https.png" alt="Pic 02 Always Use HTTPS"></p>
-<p><img data-src="/img/190417_automatic_http_rewrites.png" alt="Pic 03 Automatic HTTP Rewrites"></p>
-<p>另外可以根据实际需求选择是否开启 HSTS Preload 和 TLS v1.3。</p>
-<h2 id="0xFF-结语"><a href="#0xFF-结语" class="headerlink" title="0xFF 结语"></a>0xFF 结语</h2><p>在之前查找资料的时候发现了一些使用 Page Rules 来实现强制 HTTPS 的文章，不知道是不是因为写文时还没有上述的 Always Use HTTPS 和 Automatic HTTP Rewrites 功能，希望有了解的人能解答一下。</p>
-<p><code># EOF</code></p>
-
-    </div>
-
-    
-    
-    
-        
-
-<div>
-<ul class="post-copyright">
-  <li class="post-copyright-author">
-    <strong>本文作者： </strong>A1exMinatoooo
-  </li>
-  <li class="post-copyright-link">
-    <strong>本文链接：</strong>
-    <a href="https://a1ex.pw/2019/04/16/use-custom-domain-for-github-pages/" title="为 GitHub Pages 启用自定义域名并开启 HTTPS">https://a1ex.pw/2019/04/16/use-custom-domain-for-github-pages/</a>
-  </li>
-  <li class="post-copyright-license">
-    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
-  </li>
-</ul>
 </div>
 
+</header>
 
-      <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/GitHub/" rel="tag"># GitHub</a>
-              <a href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag"># 博客</a>
-          </div>
+      
+      
+      
+      <div class="post-body">
+          <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>A simple clock</title>
+  </head>
 
-        
+  <body translate="no">
+    <div id="output"></div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script>
+      // https://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript
+      var urlParams;
+      (function () {
+        var match,
+          pl = /\+/g, // Regex for replacing addition symbol with a space
+          search = /([^&=]+)=?([^&]*)/g,
+          decode = function (s) {
+            return decodeURIComponent(s.replace(pl, " "));
+          },
+          query = window.location.search.substring(1);
 
-        
-    <div class="post-nav">
-      <div class="post-nav-item"></div>
-      <div class="post-nav-item">
-    <a href="/2020/03/03/A-method-to-improve-stability-of-ULL-rebroadcasting/" rel="next" title="在服务器上实现对YouTube低延迟的缓冲以方便转播">
-      在服务器上实现对YouTube低延迟的缓冲以方便转播 <i class="fa fa-chevron-right"></i>
-    </a></div>
+        urlParams = {};
+        while ((match = search.exec(query)))
+          urlParams[decode(match[1])] = decode(match[2]);
+      })();
+
+      var output = document.getElementById("output");
+      if (urlParams["style"]) output.setAttribute("style", urlParams["style"]);
+      if (urlParams["bodyStyle"])
+        document.body.setAttribute("style", urlParams["bodyStyle"]);
+
+      var c;
+      setInterval(
+        (c = function () {
+          output.innerText = moment().zone("+0800").format(urlParams["format"] || "");
+        }),
+        1000
+      );
+      c();
+    </script>
+  </body>
+</html>
+
+      </div>
+      
+      
+      
     </div>
-      </footer>
     
-  </article>
-  
-  
-  
 
+    
+    
+    
 
 
           </div>
@@ -354,7 +294,6 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0x01-%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E9%85%8D%E7%BD%AE"><span class="nav-number">1.</span> <span class="nav-text">0x01 自定义域名配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x02-SSL-%E8%AE%BE%E7%BD%AE"><span class="nav-number">2.</span> <span class="nav-text">0x02 SSL 设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0xFF-%E7%BB%93%E8%AF%AD"><span class="nav-number">3.</span> <span class="nav-text">0xFF 结语</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -520,7 +459,7 @@
       quicklink({
         timeout : 3000,
         priority: true,
-        ignores : [uri => uri.includes('#'),uri => uri === 'https://a1ex.pw/2019/04/16/use-custom-domain-for-github-pages/',]
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://a1ex.pw/static/clock-bj.html',]
       });
       });
   </script>
@@ -537,9 +476,9 @@
 </script>
 <script>
   var disqus_config = function() {
-    this.page.url = "https://a1ex.pw/2019/04/16/use-custom-domain-for-github-pages/";
-    this.page.identifier = "2019/04/16/use-custom-domain-for-github-pages/";
-    this.page.title = "为 GitHub Pages 启用自定义域名并开启 HTTPS";
+    this.page.url = "https://a1ex.pw/static/clock-bj.html";
+    this.page.identifier = "static/clock-bj.html";
+    this.page.title = "";
     };
   NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
     if (window.DISQUS) {

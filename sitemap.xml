@@ -2,9 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://a1ex.pw/static/clock-bj.html</loc>
+    
+    <lastmod>2022-07-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://a1ex.pw/2020/03/03/A-method-to-improve-stability-of-ULL-rebroadcasting/</loc>
     
-    <lastmod>2022-05-20</lastmod>
+    <lastmod>2022-07-10</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -13,7 +22,7 @@
   <url>
     <loc>https://a1ex.pw/2020/09/15/PostProcessing-for-Images-dumped-from-Rakuten-Magazine/</loc>
     
-    <lastmod>2022-05-20</lastmod>
+    <lastmod>2022-07-10</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -22,7 +31,7 @@
   <url>
     <loc>https://a1ex.pw/2020/03/31/Use-clash-on-Manjaro/</loc>
     
-    <lastmod>2022-05-20</lastmod>
+    <lastmod>2022-07-10</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -31,7 +40,7 @@
   <url>
     <loc>https://a1ex.pw/2020/04/02/get-grub-back-after-a-windows-bios-update/</loc>
     
-    <lastmod>2022-05-20</lastmod>
+    <lastmod>2022-07-10</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -40,7 +49,7 @@
   <url>
     <loc>https://a1ex.pw/2019/04/16/use-custom-domain-for-github-pages/</loc>
     
-    <lastmod>2022-05-20</lastmod>
+    <lastmod>2022-07-10</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -49,7 +58,7 @@
   <url>
     <loc>https://a1ex.pw/404.html</loc>
     
-    <lastmod>2022-05-20</lastmod>
+    <lastmod>2022-07-10</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -58,7 +67,7 @@
 
   <url>
     <loc>https://a1ex.pw/</loc>
-    <lastmod>2022-05-20</lastmod>
+    <lastmod>2022-07-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -66,84 +75,84 @@
   
   <url>
     <loc>https://a1ex.pw/tags/%E8%BD%AC%E6%92%AD/</loc>
-    <lastmod>2022-05-20</lastmod>
+    <lastmod>2022-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://a1ex.pw/tags/Vtuber/</loc>
-    <lastmod>2022-05-20</lastmod>
+    <lastmod>2022-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://a1ex.pw/tags/%E8%99%9A%E6%8B%9F%E4%B8%BB%E6%92%AD/</loc>
-    <lastmod>2022-05-20</lastmod>
+    <lastmod>2022-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://a1ex.pw/tags/%E6%9D%82%E5%BF%97/</loc>
-    <lastmod>2022-05-20</lastmod>
+    <lastmod>2022-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://a1ex.pw/tags/Python/</loc>
-    <lastmod>2022-05-20</lastmod>
+    <lastmod>2022-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://a1ex.pw/tags/Clash/</loc>
-    <lastmod>2022-05-20</lastmod>
+    <lastmod>2022-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://a1ex.pw/tags/Manjaro/</loc>
-    <lastmod>2022-05-20</lastmod>
+    <lastmod>2022-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://a1ex.pw/tags/%E4%BB%A3%E7%90%86/</loc>
-    <lastmod>2022-05-20</lastmod>
+    <lastmod>2022-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://a1ex.pw/tags/Linux/</loc>
-    <lastmod>2022-05-20</lastmod>
+    <lastmod>2022-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://a1ex.pw/tags/grub/</loc>
-    <lastmod>2022-05-20</lastmod>
+    <lastmod>2022-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://a1ex.pw/tags/GitHub/</loc>
-    <lastmod>2022-05-20</lastmod>
+    <lastmod>2022-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://a1ex.pw/tags/%E5%8D%9A%E5%AE%A2/</loc>
-    <lastmod>2022-05-20</lastmod>
+    <lastmod>2022-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
